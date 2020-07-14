@@ -1,5 +1,7 @@
 
 # [Rotate Array](https://leetcode.com/explore/interview/card/top-interview-questions-easy/92/array/646/)
+
+The solution was achieved with a complexity of $O(n)$ computationally and $O(1)$ space wise.
 ___
 ```
 class Solution:
