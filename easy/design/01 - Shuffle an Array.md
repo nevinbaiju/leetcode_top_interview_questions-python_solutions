@@ -1,5 +1,7 @@
 # [Shuffle an Array](https://leetcode.com/explore/interview/card/top-interview-questions-easy/98/design/670/)
 
+The solution completes in O(n).
+
 ___
 ```python
 import random
