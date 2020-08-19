@@ -1,0 +1,36 @@
+# [Longest Palindromic Substring](https://leetcode.com/explore/interview/card/top-interview-questions-medium/103/array-and-strings/780)
+
+Using a simple caching, however this exceeded time limit.
+
+```python
+class Solution:
+    def __init__(self):
+        self.hash_table = {}
+    def isPalin(self, s):
+        try:
+            if self.hash_table[s]:
+                return True
+            else:
+                return False
+        except KeyError:
+            mid = len(s)//2
+            for i in range(mid):
+                left_index = i
+                right_index = -(i+1)
+                if s[left_index] != s[right_index]:
+                    self.hash_table[s] = False
+                    return False
+            self.hash_table[s] = True
+            return True
+
+    
+    def longestPalindrome(self, s: str) -> str:
+        longest_palin = ""
+        for i in range(len(s)):
+            for j in range(1, len(s)-i+1):
+                substring = s[i:i+j]
+                if self.isPalin(substring):
+                    if (len(longest_palin) < len(substring)):
+                        longest_palin = substring
+        return longest_palin
+```
